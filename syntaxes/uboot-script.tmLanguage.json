@@ -1,0 +1,25 @@
+{
+  "scopeName": "source.uboot",
+  "patterns": [
+    { "name": "comment.line.number-sign.uboot", "match": "#.*$" },
+    {
+      "name": "string.quoted.double.uboot",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{ "name": "constant.character.escape.uboot", "match": "\\\\." }]
+    },
+    { "name": "string.quoted.single.uboot", "begin": "'", "end": "'" },
+    {
+      "name": "keyword.control.uboot",
+      "match": "\\b(if|then|else|elif|fi|for|do|done|while|until|in|test)\\b"
+    },
+    {
+      "name": "support.function.uboot",
+      "match": "\\b(setenv|printenv|run|saveenv|env|load|loadb|loady|loadx|fatload|ext4load|mmc|usb|dhcp|tftpboot|ping|bootm|bootz|booti|source|echo)\\b"
+    },
+    { "name": "variable.other.uboot", "match": "\\$\\{[^}]+\\}|\\$[A-Za-z_][A-Za-z0-9_]*" },
+    { "name": "constant.numeric.uboot", "match": "\\b0x[0-9A-Fa-f]+\\b|\\b\\d+\\b" }
+  ],
+  "repository": {},
+  "name": "U-Boot Script"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "vscode-bootscr-editor",
+  "displayName": "U-Boot Script Editor",
+  "description": "Editor for modifying U-Boot boot.scr (legacy uImage script) in place",
+  "version": "0.2.0",
+  "publisher": "catbraincell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catbraincell/vscode-bootscr-editor"
+  },
+  "engines": { "vscode": "^1.85.0" },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "uboot.bootscrEditor",
+        "displayName": "U-Boot Script Editor",
+        "selector": [
+          { "filenamePattern": "boot.scr" }
+        ],
+        "priority": "default"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.5"
+  }
+}
